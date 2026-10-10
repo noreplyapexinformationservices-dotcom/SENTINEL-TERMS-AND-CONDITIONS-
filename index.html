@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SENTINEL DISCORD BOT TERMS OF SERVICE</title>
+    <style>
+      :root {
+        --bg: #070d18;
+        --bg-2: #0d1730;
+        --panel: rgba(15, 24, 40, 0.9);
+        --panel-alt: rgba(23, 36, 58, 0.95);
+        --primary: #7ad7ff;
+        --primary-strong: #38a2ff;
+        --secondary: #8ef0c3;
+        --text: #edf4ff;
+        --muted: #b4c3dc;
+        --border: rgba(176, 214, 255, 0.18);
+        --success: #5fe3a3;
+        --warning: #ffce73;
+        --danger: #ff7a7a;
+        --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
+      }
+
+      * { box-sizing: border-box; }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background:
+          radial-gradient(circle at top left, rgba(56, 162, 255, 0.20), transparent 28%),
+          radial-gradient(circle at top right, rgba(142, 240, 195, 0.12), transparent 30%),
+          linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+        color: var(--text);
+        line-height: 1.7;
+      }
+
+      .container {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 52px 20px 80px;
+      }
+
+      .hero {
+        position: relative;
+        background: linear-gradient(135deg, rgba(17, 27, 45, 0.98), rgba(23, 38, 63, 0.92));
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 36px 32px 26px;
+        box-shadow: var(--shadow);
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: -20% auto auto -10%;
+        width: 360px;
+        height: 360px;
+        background: radial-gradient(circle, rgba(122, 215, 255, 0.22), transparent 60%);
+        pointer-events: none;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: auto -10% -30% auto;
+        width: 340px;
+        height: 340px;
+        background: radial-gradient(circle, rgba(142, 240, 195, 0.18), transparent 60%);
+        pointer-events: none;
+      }
+
+      .eyebrow {
+        position: relative;
+        z-index: 1;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 14px;
+      }
+
+      h1 {
+        position: relative;
+        z-index: 1;
+        margin: 0 0 12px;
+        font-size: clamp(2.2rem, 4vw, 3.8rem);
+        line-height: 1.12;
+        letter-spacing: -0.04em;
+      }
+
+      .intro {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 980px;
+      }
+
+      .hero-meta {
+        position: relative;
+        z-index: 1;
+        margin-top: 28px;
+      }
+
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 18px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(122, 215, 255, 0.12);
+        border: 1px solid rgba(122, 215, 255, 0.32);
+        color: #dbf3ff;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .stat-card {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 16px 18px;
+        transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .stat-card:hover {
+        transform: translateY(-2px);
+        border-color: rgba(122, 215, 255, 0.5);
+        box-shadow: 0 14px 30px rgba(56, 162, 255, 0.08);
+      }
+
+      .stat-label {
+        display: block;
+        color: var(--muted);
+        font-size: 0.74rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 8px;
+      }
+
+      .stat-value {
+        color: var(--text);
+        font-size: 1rem;
+        font-weight: 700;
+      }
+
+      .page {
+        margin-top: 30px;
+        background: rgba(17, 27, 45, 0.82);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+
+      .section {
+        border-bottom: 1px solid var(--border);
+        padding: 28px 30px;
+        transition: background 0.2s ease;
+      }
+
+      .section:hover {
+        background: rgba(255,255,255,0.015);
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      h2 {
+        margin: 0 0 18px;
+        font-size: 1.5rem;
+        color: var(--primary);
+        letter-spacing: -0.02em;
+      }
+
+      h3 {
+        margin: 18px 0 10px;
+        font-size: 1.08rem;
+        color: #f4f8ff;
+      }
+
+      p, li {
+        color: var(--text);
+        font-size: 0.98rem;
+      }
+
+      ul, ol {
+        margin: 12px 0 0 22px;
+        padding-left: 16px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .notice {
+        margin-top: 18px;
+        background: rgba(46, 114, 240, 0.15);
+        border: 1px solid rgba(110, 198, 255, 0.4);
+        border-radius: 12px;
+        padding: 16px 18px;
+        color: #dfeeff;
+      }
+
+      .warning-box {
+        margin-top: 18px;
+        background: rgba(255, 206, 115, 0.08);
+        border: 1px solid rgba(255, 206, 115, 0.35);
+        border-radius: 12px;
+        padding: 16px 18px;
+      }
+
+      .danger-box {
+        margin-top: 18px;
+        background: rgba(255, 122, 122, 0.08);
+        border: 1px solid rgba(255, 122, 122, 0.35);
+        border-radius: 12px;
+        padding: 16px 18px;
+      }
+
+      .small {
+        font-size: 0.9rem;
+        color: var(--muted);
+      }
+
+      .agreement {
+        margin-top: 30px;
+        padding: 24px 30px;
+        background: var(--panel-alt);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .agreement label {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        color: var(--text);
+        cursor: pointer;
+      }
+
+      .agreement input {
+        margin-top: 7px;
+        accent-color: var(--primary-strong);
+      }
+
+      .agreement button {
+        margin-top: 18px;
+        padding: 12px 22px;
+        border: 0;
+        border-radius: 10px;
+        background: var(--primary-strong);
+        color: #07111e;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .agreement button:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+
+      .agreement-status {
+        min-height: 1.5em;
+        margin: 12px 0 0;
+        color: var(--success);
+      }
+
+      @media (max-width: 860px) {
+        .stats {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 640px) {
+        .section {
+          padding: 22px 18px;
+        }
+
+        .hero {
+          padding: 24px 18px;
+        }
+
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="hero">
+        <div class="eyebrow">Sentinel Discord Bot</div>
+        <h1>SENTINEL DISCORD BOT TERMS OF SERVICE</h1>
+        <p class="intro">
+          By adding the Sentinel bot to your Discord server, using its commands, or interacting with its features, you agree to these Terms of Service. These terms apply to server owners, administrators, moderators, members, and any person who interacts with the bot, its commands, or its associated services.
+        </p>
+
+        <div class="hero-meta">
+          <div class="badge-row">
+            <span class="badge">Safety First</span>
+            <span class="badge">Server Protection</span>
+            <span class="badge">Moderation Rules</span>
+            <span class="badge">Compliance</span>
+          </div>
+
+          <div class="stats">
+            <div class="stat-card">
+              <span class="stat-label">Coverage</span>
+              <span class="stat-value">Discord servers, users, roles, and moderation workflows</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Purpose</span>
+              <span class="stat-value">Community safety, automation, reports, and server management</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Governance</span>
+              <span class="stat-value">Applicable Discord policies, local law, and platform standards</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-label">Protection</span>
+              <span class="stat-value">Risk reduction, abuse prevention, and secure operations</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="page">
+        <section class="section">
+          <h2>1. Introduction and Scope</h2>
+          <p>
+            Sentinel is a Discord bot designed to support moderation, community safety, automation, reporting, and server management tools. These Terms of Service govern your access to and use of the bot, including command usage, server integration, automation features, logging, reporting functions, and any related services provided by Sentinel.
+          </p>
+          <p>
+            These terms apply to all actions taken in connection with the bot, including adding the bot to a Discord server, granting permissions, using commands, triggering automated processes, interpreting bot output, and managing the server environment in which the bot operates.
+          </p>
+          <p>
+            Sentinel may update these terms from time to time to reflect legal, technical, or operational requirements. Continued use of the bot after updates are posted constitutes acceptance of the revised terms.
+          </p>
+          <div class="notice">
+            The goal of these terms is to help maintain safe, respectful, lawful, and well-managed Discord communities while protecting users, server staff, and the integrity of the bot itself.
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>2. Definitions</h2>
+          <p>For clarity, the following definitions apply:</p>
+          <ul>
+            <li><strong>“Bot”</strong> means the Sentinel Discord bot, including all commands, features, modules, services, dashboards, APIs, and connected systems.</li>
+            <li><strong>“Server”</strong> means any Discord server to which the Bot is added or in which it is used.</li>
+            <li><strong>“User”</strong> means any person who interacts with the Bot or uses its commands on Discord.</li>
+            <li><strong>“Server Owner/Admin”</strong> means the Discord user or role with authority to manage the server’s settings and permissions.</li>
+            <li><strong>“Content”</strong> means any text, images, files, messages, logs, data, or other material processed, displayed, stored, or generated through the Bot.</li>
+            <li><strong>“Prohibited Conduct”</strong> means conduct that violates Discord’s policies, applicable law, community safety expectations, or the rules of this agreement.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>3. Eligibility and Server Access</h2>
+          <p>To use Sentinel, you must:</p>
+          <ul>
+            <li>Be at least 13 years of age or the minimum age required by your local law and Discord’s own terms.</li>
+            <li>Have lawful authority to add the Bot to a Discord server or use its features.</li>
+            <li>Provide accurate information if required for support, moderation review, or account-related processes.</li>
+            <li>Use the Bot in a lawful and responsible manner.</li>
+            <li>Ensure that server permissions, moderation roles, and command access are appropriate for the server’s purpose and user base.</li>
+          </ul>
+          <p>
+            Server owners and administrators are responsible for the actions taken by their members, the permission structure they grant, and the safety standards they maintain. Sentinel may refuse, restrict, disable, or remove access if a server or user appears unsafe, noncompliant, abusive, or unlawful.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>4. Acceptable Use Policy</h2>
+          <p>
+            Users may not use the Bot for unlawful, abusive, harmful, deceptive, manipulative, or disruptive purposes. The following are examples of prohibited conduct, though this list is not exhaustive:
+          </p>
+          <ul>
+            <li>Harassing, threatening, stalking, doxxing, or targeting other users.</li>
+            <li>Using the Bot to facilitate spam, raids, mass pinging, abuse, or hostile server disruption.</li>
+            <li>Uploading or distributing malware, phishing attempts, harmful links, or malicious content.</li>
+            <li>Attempting to bypass moderation, security protections, command locks, rate limits, or trusted access controls.</li>
+            <li>Manipulating bot data, logs, moderation results, or trust signals to mislead others.</li>
+            <li>Using the Bot to distribute illegal, restricted, defamatory, hateful, extremist, or exploitative material.</li>
+            <li>Collecting personal data without lawful basis or with the intent to misuse or expose private information.</li>
+            <li>Engaging in fraud, impersonation, scam activity, or deceptive automation.</li>
+          </ul>
+          <p>
+            Sentinel may investigate suspicious use, review bot activity, disable commands or access, issue warnings, remove content, restrict a server, or terminate bot access when necessary to protect users, staff, or the service itself.
+          </p>
+          <p>
+            Sentinel reserves the right to pursue legal action against any user who uses the Bot for purposes outside its intended moderation and server-management functions, to the extent permitted by applicable law.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>5. Bot Features and Limitations</h2>
+          <p>
+            The Bot may provide moderation tools, logging, auto-moderation, custom commands, member management, announcement features, role controls, automation, alerts, and other utilities. These features are provided to support server operations and community protection, but they are not guaranteed to be error-free or available at all times.
+          </p>
+          <p>
+            Sentinel may change, limit, remove, or improve features at any time. We do not guarantee uninterrupted service, perfect moderation outcomes, or the elimination of all harmful behavior, abuse, spam, or violations in any server.
+          </p>
+          <ul>
+            <li>Server owners and moderators are responsible for interpreting and acting on bot output.</li>
+            <li>Bot actions may be limited by Discord permissions, role configurations, or server settings.</li>
+            <li>Automatic moderation decisions are not a substitute for human judgment in serious disputes or legal matters.</li>
+            <li>Sentinel may restrict features during incidents, security concerns, or risk events.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>6. User Content and Message Handling</h2>
+          <p>
+            By using the Bot, server members may submit messages, reports, logs, commands, files, images, or other data that are processed by the Bot. Users remain responsible for the content they send and the way they interact with the Bot and the server.
+          </p>
+          <ul>
+            <li>Content must not be unlawful, abusive, threatening, defamatory, obscene, hateful, exploitative, or harmful.</li>
+            <li>Users must not attempt to bypass moderation filters, security features, or command protections.</li>
+            <li>Users must not send malicious links, payloads, spam, or automated abuse to the Bot or other members.</li>
+            <li>Users must not create or distribute fake reports or malicious complaints.</li>
+          </ul>
+          <p>
+            Sentinel may review, filter, log, moderate, remove, or restrict content when necessary to enforce these terms, comply with Discord policy, prevent abuse, or protect the safety of users and communities.
+          </p>
+          <div class="warning-box">
+            Sentinel does not guarantee the accuracy, legality, completeness, or suitability of any content processed or generated through the Bot. Server staff and users should independently verify any information that may affect safety, moderation decisions, or personal judgment.
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>7. Reporting, Complaints, and Moderation Escalation</h2>
+          <p>
+            Users may report suspicious behavior, spam, harassment, scams, impersonation, exploitative conduct, or harmful activity through the Bot’s reporting systems or official support channels.
+          </p>
+          <p>
+            Reports are reviewed according to risk, severity, context, and applicable law. Sentinel may request information from the reporting user or server staff to assess a matter fairly. Sentinel may also escalate serious or repeated issues to higher moderation review or relevant authorities when necessary.
+          </p>
+          <ul>
+            <li>Reports must be truthful, relevant, and made in good faith.</li>
+            <li>False, malicious, or repeated bad-faith reports may lead to action against the reporter.</li>
+            <li>Sentinel may warn, restrict, mute, timeout, remove content, or disable access if a violation is identified.</li>
+            <li>Responses to reports are not guaranteed outcomes and may vary based on available evidence.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>8. Privacy, Data Protection, and Security</h2>
+          <p>
+            The Bot may process Discord user IDs, usernames, messages, moderation actions, server data, logs, command usage, and related metadata necessary to operate its features. Sentinel may use this information to provide moderation support, security monitoring, abuse prevention, and service reliability.
+          </p>
+          <p>
+            Sentinel uses reasonable technical and administrative safeguards to protect data, but no digital service is completely immune to compromise. Server owners, admins, and users are responsible for maintaining their own Discord account security and keeping access credentials secure.
+          </p>
+          <ul>
+            <li>Sentinel may store moderation logs, command history, reports, and relevant metadata for operational and safety purposes.</li>
+            <li>Sentinel may share data with trusted third-party services where necessary for hosting, moderation systems, support, or compliance.</li>
+            <li>Data may be retained or reviewed for abuse prevention, dispute handling, security incidents, or legal obligations.</li>
+            <li>Users may request access to their data subject to policy, legal limitations, and operational necessity.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>9. Server Responsibility and Moderator Conduct</h2>
+          <p>
+            Server owners, administrators, and moderators are responsible for how they use the Bot, the permissions they grant, and the moderation decisions they make. The Bot is a tool; it does not replace sound judgment, legal analysis, or proper community management.
+          </p>
+          <ul>
+            <li>Moderators must act fairly, professionally, and in accordance with applicable Discord rules and law.</li>
+            <li>Server staff must not abuse commands, punitive actions, or automation to silence users unfairly.</li>
+            <li>Server owners should maintain community rules and ensure moderation practices are clear and consistent.</li>
+            <li>Sentinel may restrict bot access when a server is misusing the Bot or creating a safety risk.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>10. Security Obligations</h2>
+          <p>
+            Users must not engage in or facilitate any activity that undermines the security of the Bot, Discord servers, or other users. This includes credential abuse, account takeover attempts, bot abuse, malicious automation, phishing, link manipulation, privilege escalation, or exploitation of vulnerabilities.
+          </p>
+          <ul>
+            <li>Do not attempt to reverse-engineer or exploit the Bot or its connected systems.</li>
+            <li>Do not create or distribute malware, exploit scripts, or malicious automation targeting users or servers.</li>
+            <li>Promptly notify Sentinel if you suspect a compromise, breach, or abuse of the Bot.</li>
+            <li>Follow all security instructions, re-authentication requirements, or account recovery steps provided by Sentinel.</li>
+          </ul>
+          <p>
+            Sentinel may temporarily disable or restrict access during a security incident to reduce risk and protect communities.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>11. Intellectual Property Rights</h2>
+          <p>
+            The Bot, its software, code, commands, branding, interfaces, design, documentation, and associated materials are owned by Sentinel or its licensors. Unless expressly stated otherwise, all rights remain reserved.
+          </p>
+          <p>
+            Users retain ownership of their own Discord content and any original content they submit, provided they have lawful rights to that content. By interacting with the Bot, users permit Sentinel to process, store, moderate, and use that content as necessary to operate the Bot, enforce rules, prevent abuse, and comply with legal obligations.
+          </p>
+          <p>
+            Users must not duplicate, redistribute, republish, reverse engineer, or commercialize Sentinel’s proprietary assets without prior written authorization.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>12. Disputes, Abuse, and Harmful Conduct</h2>
+          <p>
+            Sentinel is committed to reducing harassment, scams, exploitation, and harmful behavior in Discord communities. If a user experiences or observes abuse, manipulation, fraud, or harmful conduct, they may submit a report through the Bot or official support channels.
+          </p>
+          <ul>
+            <li>Harassment, intimidation, threats, and targeted abuse are prohibited.</li>
+            <li>Disputes between users are not automatically resolved by Sentinel unless they involve a safety risk, fraud, or policy violation.</li>
+            <li>Sentinel may intervene to prevent repeated harm across one or more servers or accounts.</li>
+            <li>Users remain responsible for their own conduct and for protecting themselves from scams, impersonation, or manipulation.</li>
+          </ul>
+          <p>
+            In serious cases, Sentinel may temporarily restrict access while an investigation proceeds and may request evidence before restoring access.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>13. Safety-Related Restrictions and Protective Measures</h2>
+          <p>
+            Sentinel may take protective action without prior notice when needed to protect users, maintain platform safety, or reduce immediate risk. Such actions may include:
+          </p>
+          <ul>
+            <li>Temporary server or user restrictions.</li>
+            <li>Command disabling or feature limits.</li>
+            <li>Moderation action logging and enforcement.</li>
+            <li>Verification checkpoints.</li>
+            <li>Message or content removal.</li>
+            <li>Escalation to Discord, legal authorities, or relevant internal review teams.</li>
+          </ul>
+          <p>
+            Protective measures are operational responses and are not determinations of guilt. Sentinel may notify users or server staff about actions taken when legally or operationally appropriate.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>14. Warranties and Representations</h2>
+          <p>
+            Each user represents and warrants that they will use the Bot lawfully, respectfully, and in good faith. Users agree not to misstate information, conceal material facts, or attempt to manipulate the Bot’s functions or trust systems.
+          </p>
+          <p>
+            Sentinel provides the Bot on an “as is” and “as available” basis. We do not guarantee uninterrupted service, error-free operation, or the complete elimination of spam, abuse, fraud, or harmful content. We make no warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, or uninterrupted availability, except to the extent specifically required by law.
+          </p>
+          <div class="danger-box">
+            Except where required by applicable law, Sentinel disclaims all warranties relating to the Bot, including implied warranties of quality, fitness for a particular purpose, non-infringement, and reliable operation.
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>15. Limitation of Liability</h2>
+          <p>
+            To the maximum extent permitted by applicable law, Sentinel shall not be liable for indirect, incidental, special, consequential, punitive, or similar damages, including loss of reputation, loss of server trust, loss of operational continuity, or other harms arising from use of the Bot or these Terms.
+          </p>
+          <p>
+            Sentinel’s aggregate liability for any claim relating to the Bot shall not exceed the total amount paid by the user or server owner to Sentinel for the specific service giving rise to the claim during the preceding 12 months, or, if no fees were paid, a reasonable amount determined by applicable law.
+          </p>
+          <p>
+            Users acknowledge that Discord communities involve inherent risk and that no moderation or automation tool can eliminate all harmful behavior, disputes, or errors.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>16. Indemnification</h2>
+          <p>
+            You agree to indemnify, defend, and hold harmless Sentinel, its affiliates, staff, contractors, and representatives from any claims, liabilities, losses, damages, expenses, or legal costs arising from:
+          </p>
+          <ul>
+            <li>Your violation of these Terms.</li>
+            <li>Your unlawful, abusive, fraudulent, or harmful conduct.</li>
+            <li>Any content or actions originating from your server or account.</li>
+            <li>Failure to comply with Discord rules, safety requirements, or applicable law.</li>
+            <li>Any complaint, moderation issue, or dispute caused by your server’s activity or access to the Bot.</li>
+          </ul>
+          <p>
+            Sentinel may assume the defense of a claim when necessary to protect the Bot, community safety, or legal compliance.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>17. Suspension, Termination, and Removal</h2>
+          <p>
+            Sentinel may suspend, restrict, or revoke access to the Bot at any time if it reasonably believes a user, member, or server has violated these terms, created a significant risk, engaged in abusive or unlawful conduct, or compromised the safety of the service.
+          </p>
+          <p>
+            Grounds for removal may include repeated policy violations, fraud, malicious behavior, security concerns, legal risk, Discord policy violations, or noncooperation with moderation or safety reviews.
+          </p>
+          <ul>
+            <li>Server owners may remove the Bot from their server at any time through Discord permissions or server settings.</li>
+            <li>Sentinel may retain logs, records, and relevant data necessary for safety, legal, or technical reasons, even after removal.</li>
+            <li>Termination does not remove obligations already incurred before removal, including indemnity, cooperation, or reporting obligations.</li>
+          </ul>
+        </section>
+
+        <section class="section">
+          <h2>18. Dispute Resolution</h2>
+          <p>
+            Any dispute relating to the Bot or these Terms should first be addressed through good-faith communication with Sentinel. If a resolution cannot be reached, the matter may be escalated through formal review, mediation, arbitration, or litigation as permitted by the applicable law and jurisdiction.
+          </p>
+          <p>
+            Sentinel may resolve safety or moderation disputes based on evidence and internal policy while preserving any rights available under applicable law.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>19. Governing Law and Jurisdiction</h2>
+          <p>
+            These Terms are governed by the laws of the jurisdiction in which Sentinel is established, unless a separate written agreement states otherwise. Users agree to the jurisdiction designated for disputes under the relevant legal framework.
+          </p>
+          <p>
+            Where local law gives consumers or users specific protections that cannot be waived, those protections remain in effect and are not overridden by these terms.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>20. Changes to the Terms</h2>
+          <p>
+            Sentinel may revise these Terms from time to time to reflect changes in the Bot, legal requirements, moderation practices, or operational realities. Material changes will be communicated through the Bot’s official channels, Discord notices, support communication, or other reasonable means.
+          </p>
+          <p>
+            Continued use of the Bot after notice of a change constitutes acceptance of the updated Terms. If you do not agree to the revised terms, you should stop using the Bot and remove it from your server.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>21. Compliance with Applicable Laws</h2>
+          <p>
+            Users must comply with all applicable local, national, and international laws, including data protection, privacy, cybercrime, anti-fraud, sanctions, consumer protection, intellectual property, anti-harassment, and relevant platform policies.
+          </p>
+          <p>
+            Sentinel may restrict access to certain servers, users, or jurisdictions where use would violate law, sanctions obligations, or safety standards. Users are responsible for ensuring their use of the Bot is lawful in their jurisdiction.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>22. Communication and Notices</h2>
+          <p>
+            Sentinel may communicate with users through Discord messages, bot notifications, support tickets, email, or formal notices posted in official channels. Users are responsible for keeping their contact information current and reviewing relevant notifications.
+          </p>
+          <p>
+            Notice may be considered delivered when sent to the contact information associated with a user or server or when posted in an official and visible communication channel.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>23. Force Majeure</h2>
+          <p>
+            Sentinel is not liable for delays or service disruptions caused by events beyond reasonable control, including natural disasters, war, civil unrest, labor disruptions, infrastructure failures, cyber incidents, government actions, public health emergencies, or Discord platform issues. In such events, Sentinel may suspend or alter service availability without liability to the extent necessary to protect users and maintain continuity.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>24. Severability</h2>
+          <p>
+            If any provision of these Terms is invalid, unlawful, or unenforceable, the remaining terms remain in effect. The invalid provision will be replaced with a valid provision that most closely reflects the original purpose, to the extent permitted by law.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>25. Entire Agreement</h2>
+          <p>
+            These Terms, together with Discord’s own terms and any applicable support policies or moderation rules, constitute the full agreement between the user and Sentinel regarding the Bot, except where a separate written agreement expressly overrides these terms.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>26. Contact Information</h2>
+          <p>
+            For questions, support requests, legal notices, moderation concerns, safety reports, or compliance matters, users may contact Sentinel through the official support channels, bot-related communication portals, or the contact methods published by Sentinel.
+          </p>
+          <p>
+            Sentinel may update its support or contact details as necessary. Users should rely on official communication methods to ensure that any notice is valid and secure.
+          </p>
+          <div class="notice">
+            These Terms are intended to protect users, staff, and communities. They are not a substitute for legal advice specific to your server, jurisdiction, or use case. If you operate a larger community or need legal guidance, consult legal counsel where appropriate.
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>27. Legal Actions and Remedies</h2>
+          <p>
+            Sentinel may preserve relevant records, investigate suspected violations, restrict or terminate access, and pursue remedies available under applicable law when it reasonably believes these Terms or the law have been violated. Where appropriate and legally permitted, Sentinel may refer suspected unlawful activity to Discord or the relevant authorities and cooperate with valid legal requests.
+          </p>
+          <p>
+            Nothing in these Terms requires Sentinel to pursue legal action, limits any rights or remedies available under applicable law, or waives protections that cannot legally be waived. Any action will be subject to applicable law and the procedures of the relevant jurisdiction.
+          </p>
+        </section>
+      </main>
+
+      <section class="agreement" aria-labelledby="agreement-heading">
+        <h2 id="agreement-heading">Agreement</h2>
+        <p>Review these Terms before deciding whether to accept them. You can leave this page at any time; acceptance is not required to close or navigate away from it.</p>
+        <label for="agree-terms">
+          <input id="agree-terms" type="checkbox" />
+          <span>I have read and understood these Terms, and I agree to them.</span>
+        </label>
+        <button id="agree-button" type="button" disabled>I AGREE</button>
+        <p id="agreement-status" class="agreement-status" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+    <script>
+      const agreeCheckbox = document.getElementById("agree-terms");
+      const agreeButton = document.getElementById("agree-button");
+      const agreementStatus = document.getElementById("agreement-status");
+
+      agreeCheckbox.addEventListener("change", () => {
+        agreeButton.disabled = !agreeCheckbox.checked;
+      });
+
+      agreeButton.addEventListener("click", () => {
+        if (!agreeCheckbox.checked) return;
+        agreementStatus.textContent = "Your agreement has been recorded for this session.";
+        agreeButton.disabled = true;
+        agreeCheckbox.disabled = true;
+      });
+    </script>
+  </body>
+</html>
